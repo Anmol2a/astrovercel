@@ -2,15 +2,14 @@
   "version": 2,
   "builds": [
     {
-      "src": "index.php",
+      "src": "**/*.php",
       "use": "vercel-php"
     }
   ],
-  "routes": [
-  {
-    "src": "/(.*)",
-    "dest": "/index.php?get=$1"
-  }
-],
-  "regions": ["sin1"]
+  "rewrites": [
+    {
+      "source": "/jio/binge-play/primary.m3u8",
+      "destination": "/main.php"
+    }
+  ]
 }
